@@ -6,6 +6,7 @@ import Cell from "react-mdl"
 import { Link } from "react-router-dom"
 import MediaCard from "./components/card"
 import API from "./utils/API";
+import SortButton from './components/sortButton';
 import CreateNewMedia from "./components/createnewmedia";
 import { library } from "@fortawesome/fontawesome-svg-core"
 import { fab } from "@fortawesome/free-brands-svg-icons"
@@ -13,22 +14,39 @@ import { faBook, faFilm, faGamepad, faMusic, faTv } from "@fortawesome/free-soli
 
 class App extends React.Component {
   state = {
-    mediaList: []
+    mediaList: [],
+    initialList: []
   };
-  
-  getFullMediaList = () => {
-    API.getFullMediaList()
-      .then(res => this.setState({mediaList: res.data}))
-      .catch(err => console.log(err));
-      
-     
-  }
 
   componentDidMount() {
     API.getFullMediaList()
-      .then(res => this.setState({mediaList: res.data}))
+      .then(res => this.setState({mediaList: res.data, initialList: res.data}))
       .catch(err => console.log(err));
   };
+
+  getFullMediaList = () => {
+    API.getFullMediaList()
+      .then(res => this.setState({ mediaList: res.data }))
+      .catch(err => console.log(err));
+  }
+
+  filterType = (array, filter) => {
+    let filtered = []
+    
+    for (let x=0; x < array.length; x++) {
+      if (filter === "none") {
+        filtered = this.state.initialList;
+      }
+      
+      else if (array[x].type.includes(filter)) {
+        filtered.push(array[x]);
+      }
+    }
+    
+    this.setState({
+      mediaList: filtered
+    })
+  }
 
   render() {
     return (
@@ -49,6 +67,8 @@ class App extends React.Component {
                 </Navigation>
               </Drawer>
               <Content>
+                <SortButton text={"Filter by type: Books"} onClick={() => this.filterType(this.state.mediaList, "book")} />
+                <SortButton text={"Clear filters"} onClick={() => this.filterType(this.state.mediaList, "none")} />
                 <CreateNewMedia mainApp={this} />
                 {this.state.mediaList.map(media => (
                   <MediaCard title={media.title} status={media.status} type={media.type} date={media.date} />

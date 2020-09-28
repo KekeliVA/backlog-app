@@ -7,12 +7,12 @@ import { fab } from "@fortawesome/free-brands-svg-icons"
 
 
 export default class MediaCard extends Component {
-  constructor(props){
+  constructor(props) {
     super()
     // works as expected, returns an object from the db
     console.log(props);
   }
-  
+
   render() {
 
     const icons = {
@@ -38,24 +38,24 @@ export default class MediaCard extends Component {
     console.log(media_type);
 
     return (
-      <div className="media-cards" style={{width: "50%"}}>
+      <div className="media-cards" style={{ width: "50%" }}>
         <div className="title-div">
-            <h4>{this.props.title}</h4>
+          <a>{this.props.title}</a>
         </div>
-        
+
         <div className="status-div">
-            <p>Status: {this.props.status}</p>
+          <p>Status: {this.props.status}</p>
         </div>
 
         <div className="type-div">
-            <p>Type: {this.props.type}</p>
-            <p>test: <FontAwesomeIcon icon={media_type}/></p>
+          <p>Type: {this.props.type}</p>
+          <i className="fa-5x"><FontAwesomeIcon icon={media_type} /></i>
         </div>
 
         <div className="date-div">
-          <p>Date: { <Moment format="YYYY/MM/DD"></Moment>}</p>
+          <p>Date: {<Moment format="YYYY/MM/DD"></Moment>}</p>
         </div>
-            <input placeholder="comment"></input>
+        <input className="comment" placeholder="comment"></input>
       </div>
     )
   }

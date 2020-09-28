@@ -9,5 +9,9 @@ export default {
 
   addMediaToList: function(query) {
     return axios.post(envemu.apiurl + "/api/submit", { params: query })
+  },
+
+  updateMedia: function(id, query) {
+    return axios.put(envemu.apiurl + "/api/submit/" + id, { params: query })
   }
 };
