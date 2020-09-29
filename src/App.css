@@ -41,14 +41,16 @@
 
 .media-cards {
   background-color:white;
-  height:300px;
+  height:225px;
   width:502px;
   border: 1px solid #d0d1d5;
   border-radius:3px;
+  margin-top: 10px;
   margin-right: 18%;
   margin-bottom:10px;
   padding: 12px; 
   float: right;
+  justify-content: center;
   
   box-shadow: 0 0 5px rgba(0, 0, 0, .30);   
 }
@@ -72,15 +74,6 @@
   text-decoration:underline;
 }
 
-.status-div {
-  border-style: solid;
-  border-color: black;
-}
-
-.type-div {
-  border-style: solid;
-  border-color: cyan;
-}
 
 * {
   font-family: "Saira Semi Condensed", sans-serif;
@@ -92,13 +85,12 @@ body {
 }
 
 form {
-flex-direction: row;
-  width: 400px;
-  display: flex;
+  flex-direction: row;
+  width: 25%;
   flex-flow: column wrap;
   float: left;
-  position: fixed;
   margin-left: 1%;
+  position: fixed;
 }
 
 form div, form label, form input, form select, form textarea {
@@ -168,6 +160,37 @@ input.comment{
     width: 100%;
   }
 }
-
-.newmedia{}
+.fa-5x{
+  float: right;
+  margin: 3%;
+}
+/*.newmedia{} */
 /* try flex-direction: column, justify-content: center, and align-items: center on project-cards*/
+
+.comment-form {
+  justify-content: center;
+  width: 50%;
+  position: absolute;
+}
+
+.comment-form input {
+  width: 60%;
+}
+
+.medialist-map {
+  margin-top: 1.5em;
+}
+
+.delete-button {
+  float: right;
+  width: 50px;
+  height: 50px;
+  border: 0px;
+  margin-top: -25px;
+  margin-right: -30px;
+  border-radius: 100px;
+  background-color: #fa8484;
+  color: white;
+  font-size: 30px;
+  box-shadow: 0 8px 6px -6px #555;
+}

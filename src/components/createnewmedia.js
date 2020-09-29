@@ -18,10 +18,9 @@ export default class CreateNewmedia extends Component {
     }
 
     getFullMediaList = () => {
-      console.log("Ding???????");
-      API.getFullMediaList()
-        .then(res => this.setState({mediaList: res.data}))
-        .catch(err => console.log(err));
+        API.getFullMediaList()
+            .then(res => this.setState({ mediaList: res.data }))
+            .catch(err => console.log(err));
     }
 
     componentDidMount() {
@@ -62,8 +61,8 @@ export default class CreateNewmedia extends Component {
 
         console.log(media);
         API.addMediaToList(media)
-          .then(res => console.log(res.data))
-          .catch(err => console.log(err))
+            .then(res => console.log(res.data))
+            .catch(err => console.log(err))
     }
 
     render() {

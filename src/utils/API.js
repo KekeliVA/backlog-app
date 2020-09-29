@@ -11,7 +11,19 @@ export default {
     return axios.post(envemu.apiurl + "/api/submit", { params: query })
   },
 
+  addComment: function(id, query) {
+    console.log("id: " + id);
+    console.log("query: " + query.comment);
+    return axios.put(envemu.apiurl + "/api/comment/" + id + "/" + query);
+  },
+
   updateMedia: function(id, query) {
-    return axios.put(envemu.apiurl + "/api/submit/" + id, { params: query })
+    console.log("QUERY IS: " + query);
+    return axios.put(envemu.apiurl + "/api/submit/" + id + "/" + query);
+  },
+
+  deleteMedia: function(id) {
+    console.log("DELETING ID: " + id);
+    return axios.delete(envemu.apiurl + "/api/submit/" + id)
   }
 };
