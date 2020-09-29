@@ -119,7 +119,6 @@ export default class MediaCard extends Component {
         </div>
 
         <div className="type-div">
-          <p>Type: {this.props.type}</p>
           <i className="fa-5x"><FontAwesomeIcon icon={media_type} /></i>
         </div>
 

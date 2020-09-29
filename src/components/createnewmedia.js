@@ -56,7 +56,8 @@ export default class CreateNewmedia extends Component {
             title: this.state.newmedia,
             type: this.state.type,
             status: this.state.status,
-            date: new Date(Date.now())
+            date: new Date(Date.now()),
+            comment: "Comment about your progress here"
         }
 
         console.log(media);

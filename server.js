@@ -69,7 +69,8 @@ app.post("/api/submit", cors(), (req, res) => {
     title: req.body.params.title,
     status: req.body.params.status,
     type: req.body.params.type,
-    date: req.body.params.date
+    date: req.body.params.date,
+    comment: req.body.params.comment
   })
     .then(dbMedia => {
       res.send(dbMedia);
