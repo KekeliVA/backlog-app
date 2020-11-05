@@ -2,7 +2,7 @@ const mongoose = require("mongoose");
 const db = require("../models");
 
 mongoose.connect(
-  process.env.MONGODB_URI || "mongodb://localhost/backlogdb"
+  process.env.MONGODB_URI || "mongodb://localhost/backlogdb", { useNewUrlParser: true, useUnifiedTopology: true } 
 );
 
 /* DEFAULT/VARIETY dataset - contains at least two of each possible combination of type and status.

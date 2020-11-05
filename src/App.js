@@ -6,6 +6,8 @@ import Cell from "react-mdl";
 import { Link } from "react-router-dom";
 import MediaCard from "./components/card";
 import API from "./utils/API";
+
+
 //import CreateNewMedia from "./components/createnewmedia";
 
 function App() {
@@ -48,7 +50,7 @@ function App() {
             </Drawer>
             <Content>
               {mediaList.map(media => (
-                <MediaCard />
+                <MediaCard filterSearch/>
               ))}
             </Content>
             {/* <CreateNewMedia /> */}
