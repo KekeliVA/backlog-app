@@ -2,6 +2,8 @@
 
 This was the final project in the University of Connecticut's Fullstack Web Development Bootcamp. The only requirement given to us was that we had to utilize the MERN stack (MongoDB, ExpressJS, ReactJS, NodeJS). The purpose of this app is to allow users to keep track of media they are currently consuming.
 
+![capture of frontpage of backlog-app](backlog-app-capture.png)
+
 ## Features
 
 ### Media creation
